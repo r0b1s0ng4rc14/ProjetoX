@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage (teste) {
-            step{
-                sh "ls -lah"
+            steps{
+                sh 'ls -lah'
             }
         }
         stage('Build Imagel') {
