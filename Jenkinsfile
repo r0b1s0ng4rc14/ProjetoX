@@ -1,5 +1,7 @@
 pipeline {
     agent any 
+
+    stages{
         stage('Build Imagel') {
             steps {
                 script {
@@ -7,8 +9,9 @@ pipeline {
                 }
             }
         }
+
         stage('Push Image'){
-            steps{
+            steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
                         dockerapp.push('latest')
