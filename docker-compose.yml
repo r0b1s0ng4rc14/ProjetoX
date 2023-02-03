@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  db:
+    image: robisongarcia/mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: '123456789'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
