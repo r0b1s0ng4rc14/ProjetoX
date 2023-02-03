@@ -2,6 +2,11 @@ pipeline {
     agent any 
 
     stages {
+        stage (teste) {
+            step{
+                sh "ls -lah"
+            }
+        }
         stage('Build Imagel') {
             steps {
                 script {
