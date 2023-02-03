@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     stages{
-        stage('Build Imagel') {
+        stage('Build Image') {
             steps {
                 script {
                     dockerapp = docker.build("robisongarcia/mysql}", '-f ./src/Dockerfile .') 
