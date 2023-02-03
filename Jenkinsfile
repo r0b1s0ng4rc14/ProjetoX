@@ -5,7 +5,7 @@ pipeline {
         stage('Build Imagel') {
             steps {
                 script {
-                    dockerapp = docker.build("robisongarcia/mysql:${env.BUILD_ID}", '-f ./src/Dockerfile .') 
+                    dockerapp = docker.build("robisongarcia/mysql:v${env.BUILD_ID}", '-f ./src/Dockerfile .') 
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
                         dockerapp.push('latest')
-                        dockerapp.push('v${env.BUILD_ID}')
+                        dockerapp.push('${env.BUILD_ID}')
                     }
                 }
             }
