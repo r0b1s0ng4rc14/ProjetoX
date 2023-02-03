@@ -10,7 +10,7 @@ pipeline {
         stage('Build Imagel') {
             steps {
                 script {
-                    dockerapp = docker.build("robisongarcia/mysql", '-f ./src/Dockerfile ./src') 
+                    dockerapp = docker.build("robisongarcia/mysql", '-f ./src/Dockerfile') 
                 }
             }
         }
